@@ -12,19 +12,19 @@ function sessionSecret(): string {
   const explicit = process.env.ADMIN_SESSION_SECRET?.trim() ?? "";
   if (explicit.length >= 32) return explicit;
   const pwd = password();
-  if (pwd.length >= 12) {
+  if (pwd.length >= 8) {
     return createHmac("sha256", "ow-admin").update(pwd).digest("hex");
   }
   return "";
 }
 
 export function adminConfigured(): boolean {
-  return password().length >= 12 && sessionSecret().length >= 32;
+  return password().length >= 8 && sessionSecret().length >= 32;
 }
 
 export function verifyAdminPassword(candidate: string): boolean {
   const expected = password();
-  if (expected.length < 12 || candidate.length < 12) return false;
+  if (expected.length < 8 || candidate.length < 8) return false;
   const a = Buffer.from(candidate);
   const b = Buffer.from(expected);
   if (a.length !== b.length) return false;

@@ -52,7 +52,7 @@ export default function ConnexionPage() {
             className="mt-2 h-12 w-full rounded-xl border border-line bg-panel px-4 text-ink outline-none focus:border-glow/50"
             autoComplete="current-password"
             required
-            minLength={12}
+            minLength={8}
           />
         </label>
         {error ? <p className="text-sm text-danger">{error}</p> : null}

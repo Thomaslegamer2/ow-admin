@@ -48,7 +48,7 @@ Secrets d'ingest optionnels : `SITE_SECRET_AUDIOVA`, `SITE_SECRET_VIDEOVA`, `SIT
 | `HOSTNAME` | `0.0.0.0` |
 | `PORT` | laisser Hostinger (souvent `3000`) |
 | `NEXT_PUBLIC_SITE_URL` | `https://admin.tondomaine.com` |
-| `ADMIN_PASSWORD` | ≥ 12 caractères |
+| `ADMIN_PASSWORD` | ≥ 8 caractères |
 | `ADMIN_SESSION_SECRET` | ≥ 32 caractères |
 
 4. Health check : `GET /api/health`

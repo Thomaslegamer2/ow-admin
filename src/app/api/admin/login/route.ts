@@ -9,7 +9,7 @@ import {
 export async function POST(request: Request) {
   if (!adminConfigured()) {
     return NextResponse.json(
-      { error: "not_configured", message: "Définis ADMIN_PASSWORD (≥12) et ADMIN_SESSION_SECRET (≥32)." },
+      { error: "not_configured", message: "Définis ADMIN_PASSWORD (≥8) et ADMIN_SESSION_SECRET (≥32)." },
       { status: 503 },
     );
   }
